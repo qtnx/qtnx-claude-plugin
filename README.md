@@ -1,0 +1,110 @@
+# qtnx-claude-plugin
+
+Claude Code plugin with skills for task delegation, PR review workflows, and code review iteration.
+
+## Skills Included
+
+| Skill | Trigger | Description |
+|-------|---------|-------------|
+| `clink-codex-delegate` | "clink codex" | Delegate coding tasks to clink codex/gemini with structured task briefs |
+| `gh-pr-review` | "PR review", "show PR comments" | Manage GitHub PR inline comments from terminal using gh-pr-review extension |
+| `iterate-review-with-codex` | "codex review", "fix pr code review" | Iterate code review workflow with codex |
+
+## Installation
+
+### Prerequisites
+
+- [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code) installed and configured
+- Git
+
+### Install from GitHub
+
+```bash
+claude plugin install qtnx/qtnx-claude-plugin
+```
+
+### Install from Local Directory
+
+```bash
+# Clone the repository
+git clone https://github.com/qtnx/qtnx-claude-plugin.git
+
+# Install the plugin
+claude plugin install /path/to/qtnx-claude-plugin
+```
+
+### Manual Installation
+
+Copy the plugin folder to your Claude plugins directory:
+
+```bash
+# Clone
+git clone https://github.com/qtnx/qtnx-claude-plugin.git
+
+# Copy to plugins directory
+cp -r qtnx-claude-plugin ~/.claude/plugins/
+```
+
+## Usage
+
+Once installed, the skills activate automatically based on trigger keywords:
+
+### Delegate Tasks to Clink Codex
+
+```
+Use clink codex to implement the user authentication module
+```
+
+If codex fails, switch to gemini:
+
+```
+Use clink gemini instead of codex for this task
+```
+
+### PR Review with gh-pr-review
+
+```
+Show me the unresolved PR review comments
+```
+
+```
+Reply to the review thread about the null check
+```
+
+### Iterate Code Review
+
+```
+Fix the codex review comments on this PR
+```
+
+## Plugin Structure
+
+```
+qtnx-claude-plugin/
+├── .claude-plugin/
+│   └── plugin.json          # Plugin metadata
+├── commands/                 # Custom slash commands (empty)
+├── skills/
+│   ├── clink-codex-delegate/ # Task delegation skill
+│   ├── gh-pr-review/         # PR review management skill
+│   └── iterate-review-with-codex/ # Review iteration skill
+└── README.md
+```
+
+## Requirements for Skills
+
+### gh-pr-review Skill
+
+Requires the gh-pr-review extension:
+
+```bash
+gh extension install agynio/gh-pr-review
+```
+
+### clink-codex-delegate Skill
+
+Requires clink CLI with codex/gemini configured.
+
+## License
+
+MIT

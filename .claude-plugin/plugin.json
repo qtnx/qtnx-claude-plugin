@@ -1,0 +1,8 @@
+{
+  "name": "qtnx-claude-plugin",
+  "description": "Claude Code plugin with skills for task delegation to clink codex/gemini, PR review workflows, and code review iteration",
+  "version": "1.0.0",
+  "author": {
+    "name": "qtnx"
+  }
+}
