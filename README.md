@@ -27,7 +27,7 @@ claude
 /plugin marketplace add qtnx/qtnx-claude-plugin
 
 # Install the plugin
-/plugin install qtnx-claude-plugin@qtnx-claude-plugin
+/plugin install qtnx-plugin@qtnx-marketplace
 ```
 
 ### Method 2: Install from Local Directory
@@ -43,7 +43,7 @@ claude
 /plugin marketplace add ./qtnx-claude-plugin
 
 # Install the plugin
-/plugin install qtnx-claude-plugin@qtnx-claude-plugin
+/plugin install qtnx-plugin@qtnx-marketplace
 ```
 
 ### Verify Installation
@@ -93,15 +93,18 @@ Fix the codex review comments on this PR
 ## Plugin Structure
 
 ```
-qtnx-claude-plugin/
+qtnx-claude-plugin/                  # Marketplace root (this repo)
 ├── .claude-plugin/
-│   └── plugin.json          # Plugin metadata
-├── commands/                 # Custom slash commands (empty)
-├── skills/
-│   ├── clink-codex-delegate/ # Task delegation skill
-│   ├── gh-pr-review/         # PR review management skill
-│   └── iterate-review-with-codex/ # Review iteration skill
-└── README.md
+│   └── marketplace.json             # Marketplace manifest
+├── README.md
+└── qtnx-plugin/                     # Plugin directory
+    ├── .claude-plugin/
+    │   └── plugin.json              # Plugin metadata
+    ├── commands/                    # Custom slash commands
+    └── skills/
+        ├── clink-codex-delegate/    # Task delegation skill
+        ├── gh-pr-review/            # PR review management skill
+        └── iterate-review-with-codex/ # Review iteration skill
 ```
 
 ## Requirements for Skills

@@ -1,12 +1,12 @@
 {
-  "name": "qtnx-claude-plugin",
+  "name": "qtnx-marketplace",
   "owner": {
     "name": "qtnx"
   },
   "plugins": [
     {
-      "name": "qtnx-claude-plugin",
-      "source": "./",
+      "name": "qtnx-plugin",
+      "source": "./qtnx-plugin",
       "description": "Claude Code plugin with skills for task delegation to clink codex/gemini, PR review workflows, and code review iteration"
     }
   ]
