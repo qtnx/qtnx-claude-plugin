@@ -6,7 +6,7 @@
   "plugins": [
     {
       "name": "qtnx-claude-plugin",
-      "source": ".",
+      "source": "./",
       "description": "Claude Code plugin with skills for task delegation to clink codex/gemini, PR review workflows, and code review iteration"
     }
   ]
