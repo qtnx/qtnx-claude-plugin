@@ -17,32 +17,45 @@ Claude Code plugin with skills for task delegation, PR review workflows, and cod
 - [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code) installed and configured
 - Git
 
-### Install from GitHub
+### Method 1: Install from GitHub Marketplace (Recommended)
 
 ```bash
-claude plugin install qtnx/qtnx-claude-plugin
+# Start Claude Code
+claude
+
+# Add the marketplace
+/plugin marketplace add qtnx/qtnx-claude-plugin
+
+# Install the plugin
+/plugin install qtnx-claude-plugin@qtnx-claude-plugin
 ```
 
-### Install from Local Directory
+### Method 2: Install from Local Directory
 
 ```bash
 # Clone the repository
 git clone https://github.com/qtnx/qtnx-claude-plugin.git
 
+# Start Claude Code
+claude
+
+# Add local marketplace
+/plugin marketplace add ./qtnx-claude-plugin
+
 # Install the plugin
-claude plugin install /path/to/qtnx-claude-plugin
+/plugin install qtnx-claude-plugin@qtnx-claude-plugin
 ```
 
-### Manual Installation
+### Verify Installation
 
-Copy the plugin folder to your Claude plugins directory:
+After installation, restart Claude Code and verify:
 
 ```bash
-# Clone
-git clone https://github.com/qtnx/qtnx-claude-plugin.git
+# Check available commands
+/help
 
-# Copy to plugins directory
-cp -r qtnx-claude-plugin ~/.claude/plugins/
+# Check plugins
+/plugin
 ```
 
 ## Usage
